@@ -12,7 +12,7 @@
           {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
           {{ range $key, $value := $taxonomy }}
           {{ if eq $key "teoria-dei-giochi"}}
-          <a class="nav-link index-nav-title" href="#">Teoria dei Giochi</a>
+          <a class="nav-link index-nav-title" href="/unBl0g/categories/teoria-dei-giochi/">Teoria dei Giochi</a>
           <ul>
             {{ range $value.Pages }}
             <li class="index-nav-elements"><a href="{{ .Permalink}}"> {{ .LinkTitle }} </a> </li>

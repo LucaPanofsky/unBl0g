@@ -17,12 +17,14 @@
       {{$MONTHS.Get $current_month}}
       {{ .Date | dateFormat "2006" }} in
       {{ range first 1 .Params.Categories }}
-      <span class="post-category"> {{- . -}}</span>
+      {{ if eq . "Teoria dei Giochi" }}
+      <a class="lead" href="/unBl0g/categories/teoria-dei-giochi/">Teoria dei Giochi</a>
+      {{ end }}
       {{- end -}}
     </p>
     <div class="tags">
       {{ range .Params.tags }}
-      <a class="badge badge-dark" href="/tags/{{ . | urlize }}">{{ . }}</a>
+      <a class="badge badge-dark" href="/unBl0g/tags/{{ . | urlize }}">{{ . }}</a>
       {{ end }}
     </div>
   </header>
