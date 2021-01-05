@@ -1,0 +1,27 @@
+{{- $MONTHS := partial "translate_month.json.json" . -}}
+{{- $current_month := .Date | dateFormat "January"  -}}
+
+
+
+
+
+  <div class="card w-75 mx-auto">
+    <div class="card-header c-header">
+      {{ range first 1 .Params.categories  }}
+        {{ . }}
+      {{ end }}
+  </div>
+    <div class="card-body">
+      <h5 class="card-title">
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </h5>
+      <h6 class="card-subtitle mb-2 text-muted">
+        {{ .Date | dateFormat "2" }}
+        {{$MONTHS.Get $current_month}}
+        {{ .Date | dateFormat "2006" }} by {{ .Params.author }}
+      </h6>
+      <p class="card-text c-summary">
+        {{ .Summary }}
+      </p>
+    </div>
+  </div>

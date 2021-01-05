@@ -1,0 +1,33 @@
+{{- define "main" -}}
+
+{{- $MONTHS := partial "translate_month.json.json" . -}}
+{{- $AUTHORS := partial "authors-list.json.json" . -}}
+{{- $current_month := .Date | dateFormat "January" -}}
+{{- $current_author := .Params.Author -}}
+
+
+<article class="post">
+  <header>
+    <p class="h1" style="font-variant:small-caps">{{ .Title }}</p>
+    <p>
+      By {{$current_author}}
+    </p>
+    <p>
+      Pubblicato il {{ .Date | dateFormat "2" }}
+      {{$MONTHS.Get $current_month}}
+      {{ .Date | dateFormat "2006" }} in
+      {{ range first 1 .Params.Categories }}
+      <span class="post-category"> {{- . -}}</span>
+      {{- end -}}
+    </p>
+    <div class="tags">
+      {{ range .Params.tags }}
+      <a class="badge badge-dark" href="/tags/{{ . | urlize }}">{{ . }}</a>
+      {{ end }}
+    </div>
+  </header>
+  <section class="body">
+    {{ .Content }}
+  </section>
+</article>
+{{ end }}

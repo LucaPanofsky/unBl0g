@@ -1,0 +1,14 @@
+baseURL = "http://example.org/"
+languageCode = "it"
+title = "un bl0g"
+
+[permalinks]
+posts = "posts/:year/:month/:slug/"
+year = "/posts/:slug/"
+month = "/posts/:slug/"
+
+[taxonomies]
+year = "year"
+month = "month"
+tag = "tags"
+category = "categories"

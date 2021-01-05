@@ -1,0 +1,7 @@
+{{- $months := newScratch -}}
+
+{{ range $english, $italian := $.Site.Data.mesi }}
+ {{ $months.Set $english $italian }}
+{{end}}
+
+{{- return $months -}}

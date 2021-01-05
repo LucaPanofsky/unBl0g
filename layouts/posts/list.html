@@ -1,0 +1,5 @@
+{{ define "main" }}
+  {{ range .Pages }}
+    {{ partial "post_summary.html" . }}
+  {{ end }}
+{{ end }}

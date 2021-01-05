@@ -1,0 +1,7 @@
+{{- $authors := newScratch -}}
+
+{{ range $author, $vals := $.Site.Data.authors }}
+ {{ $authors.Set $author $vals }}
+{{end}}
+
+{{- return $authors -}}
