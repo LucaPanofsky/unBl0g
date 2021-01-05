@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html><head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>un bl0g</title>
+</head>
+<body><header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+    <a class="navbar-brand text-white" href="/">un bl0g</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="/posts">Posts</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</header>
+<div id="content"><article class="post">
+  <header>
+    <p class="h1" style="font-variant:small-caps">I Giochi</p>
+    <p>
+      By Luca Panofsky
+    </p>
+    <p>
+      Pubblicato il 31
+      Dicembre
+      2020 in
+      
+      <span class="post-category">Teoria dei Giochi</span></p>
+    <div class="tags">
+      
+      <a class="badge badge-dark" href="/tags/giochi">giochi</a>
+      
+      <a class="badge badge-dark" href="/tags/preferenze">preferenze</a>
+      
+      <a class="badge badge-dark" href="/tags/simultaneit%C3%A0">simultaneità</a>
+      
+      <a class="badge badge-dark" href="/tags/payoff">payoff</a>
+      
+    </div>
+  </header>
+  <section class="body">
+    <p>La teoria dei giochi è un ramo della matematica che si occupa dello studio dei <em>giochi</em>. Un gioco è una situazione strategica in cui le scelte di due o più soggetti concorrono nel determinare un comune stato del mondo.
+Ragioniamo in modo strategico ogni qual volta ci accorgiamo che le conseguenze di ciò che accade non dipendono semplicemente dal nostro comportamento ma anche dal comportamento degli altri e teniamo conto di tutto ciò mentre prendiamo le nostre decisioni.</p>
+<p>La teoria di giochi studia le <em>regolarità</em> nei giochi e le sue applicazioni sono veramente infinite, spaziano dalla biologia all&rsquo;informatica ed è ormai uno strumento d&rsquo;analisi standard in molte discipline sociali. La teoria dei giochi è un linguaggio per parlare di fenomeni complessi attraverso intuizioni strategiche. Spesso queste intuzioni sono astratte, altre volte invece possono avere un vero e proprio valore normativo come nel disegno degli schemi di voto, nelle aste e nei protocolli distribuiti. In questi post ci occuperemo di teoria dei giochi e cominciamo cercando di capire <em>che cos&rsquo;è un gioco</em>.</p>
+<h2 id="gioco">gioco</h2>
+<p>Una situazione strategica tra più giocatori è un gioco. Possiamo descrivere un gioco come gli scacchi o una guerra tra paesi, negoziazioni e situazioni ancora più complesse.</p>
+<p>Un gioco è costituito da pochi elementi fondamentali:</p>
+<ul>
+<li>i giocatori (chi sono i soggetti coinvolti?)</li>
+<li>le azioni (quali scelte possono prendere i giocatori?)</li>
+<li>le preferenze (in che modo valutano i giocatori i possibili eventi?)</li>
+<li>l&rsquo;informazione (che cosa sanno i giocatori del gioco e degli altri giocatori?)</li>
+<li>la dinamica (in quale ordine vengono prese le scelte?)</li>
+</ul>
+<p>I giocatori sono i soggetti coinvolti nel gioco e sono liberi di prendere delle azioni. Queste azioni dipendono dal contesto e variano da gioco a gioco. Un evento, o outcome, è una descrizione delle scelte fatte da ogni singolo giocatore e gli outcome comportano delle conseguenze. I giocatori sono in grado di valutare le conseguenze derivanti dagli outcome e di ordinare gli outcome secondo un criterio di preferenza. Possono avere informazioni diverse riguardo gli altri giocatori o lo stato del gioco e le scelte possono essere prese simultaneamente o in un ordine ben preciso.</p>
+<p>Studiamo i giochi perché siamo interessati alla evoluzione del sistema strategico che descrivono. Una soluzione di un gioco è un outcome che soddisfa particolari proprietà. Esistono diversi concetti di soluzione e ognuno di essi propone intuizioni diverse per spiegare le possibili evoluzioni di un gioco. Avremo modo di parlare delle soluzioni dei giochi nei prossimi post mentre ora ci dedichiamo alla loro rappresentazione.</p>
+<p>Il gioco più semplice che possiamo immaginare è un semplice gioco <em>dinamico</em> tra due giocatori in cui la prima mossa spetta al <em>giocatore 1</em> e la seconda al <em>giocatore 2</em>. Dopodiché, il gioco termina con la manifestazione delle conseguenze relative all&rsquo;outcome realizzato. Prima di parlare delle conseguenze però entriamo nei dettagli del gioco.</p>
+<p>I giocatori sono liberi di scegliere una tra due possibili azioni <code>A</code> e <code>B</code>. I giocatori conoscono il gioco ma non sempre il secondo è in grado di osservare l&rsquo;azione presa dal primo. Quando il <em>giocatore 2</em> osserva l&rsquo;azione presa dal <em>giocatore 1</em> diciamo che è <em>informato</em>, altrimenti non lo è. Possiamo rappresentre le due varianti del gioco attraverso degli <em>alberi</em></p>
+<figure class="img-fluid">
+    <img src="https://vectr.com/lucapanofsky/b1rLmaKimj.svg?width=600&amp;height=400&amp;select=b1rLmaKimjpage0" width="100%"/> 
+</figure>
+
+<p>Un albero è composto da nodi e da rami. Un nodo rappresenta un punto del gioco e può avere tanti rami tante quante sono le azioni disponibili al giocatore chiamato a scegliere in quel preciso punto del gioco. A volte un giocatore è incerto riguardo la sua posizione nel gioco. In questi casi utilizziamo un contenitore, chiamato <em>information set</em>, per racchiudere tutti i nodi decisionali in cui un giocatore crede di poter essere in un determinato momento del gioco. Nel secondo albero i nodi del <em>giocatore 2</em> appartengono a un un unico information set. In altre parole, dopo la scelta del primo giocatore il secondo non è in grado di dire in quale dei due nodi si trova. I nodi dai quali non discendono rami sono nodi terminali e rappresentano gli outcome del gioco.</p>
+<p>Quando il secondo giocatore non è informato, nessun giocatore ha un particolare vantaggio informativo nonostante la dinamica del gioco. In questi casi è come se il gioco fosse simultaneo e preferiamo rappresentarlo attraverso una tabella.</p>
+<figure class="img-fluid">
+    <img src="https://vectr.com/lucapanofsky/bEhz7cymy.svg?width=550&amp;height=396&amp;select=bEhz7cymypage0" width="50%"/> 
+</figure>
+
+<p>In questo modo possiamo descrivere giochi simultanei o giochi dinamici in cui la struttura informativa del gioco annulla possibili vantaggi o svantaggi della prima mossa. Le righe e le colonne della tabella rappresentato rispettivamente le possibili azioni del <em>giocatore 1</em> e del <em>giocatore 2</em>. Le celle invece i possibili outcome del gioco.</p>
+<p>Un outcome è un profilo di azioni la cui realizzazione produce delle conseguenze. Il gioco che abbiamo descritto ha <code>2 x 2 = 4</code> possibili outcome ai quali possiamo associare delle conseguenze, ovvero dei numeri chiamati payoff. I payoff sono unità immaginarie che modellano le preferenze dei giocatori rispetto agli outcome secondo questo semplice criterio:</p>
+<p><em>un outcome x è preferito ad un outcome y se e solo se il payoff associato a x è maggiore del payoff associato ad y</em>.</p>
+<p>La scelta di modellare le preferenze attraverso i payoff non è innocua, tuttavia ci permette di iniziare a ragionare sui giochi e di sporcarci le mani. Il tema delle preferenze merita una discussione a parte, per il momento proseguiamo con i seguenti payoff</p>
+<figure class="img-fluid">
+    <img src="https://vectr.com/lucapanofsky/bhAeFVl26.svg?width=350&amp;height=350&amp;select=bhAeFVl26page0" width="50%"/> 
+</figure>
+
+<p>che possiamo tradurre come</p>
+<p><em>il giocatore 1 preferisce l&rsquo;outcome <code>(B,A)</code> all&rsquo;outcome <code>(A,A)</code>, preferisce l&rsquo;outcome <code>(A,A)</code> all&rsquo;outcome <code>(B,B)</code> e preferisce l&rsquo;outcome <code>(B,B)</code> all&rsquo;outcome <code>(B,A)</code></em></p>
+<p><em>il giocatore 2 preferisce l&rsquo;outcome <code>(A,B)</code> all&rsquo;outcome <code>(A,A)</code>, preferisce l&rsquo;outcome <code>(A,A)</code> all&rsquo;outcome <code>(B,B)</code> e preferisce l&rsquo;outcome <code>(B,B)</code> all&rsquo;outcome <code>(A,B)</code></em></p>
+<p>Possiamo verificare facilmente che i payoff che abbiamo scelto riflettono le preferenze descritte. Per esempio è vero che il <em>giocatore 1</em> preferisce <code>(B,A)</code> a <code>(A,A)</code> in quanto <code>2 &gt; 1</code>. I payoff descrivono una relazione di preferenza e siamo interessati al loro ordinamento piuttosto che alla loro grandezza. Quando siamo interessati alla grandezza di questi numeri le preferenze vengono dette <em>cardinali</em> e ci permettono di esprimere preferenze in condizioni di incertezza e relazioni più complesse.</p>
+<p>Dopo queste brevi considerazioni possiamo rappresentare il gioco in <em>forma strategica</em> esprimendo una relazione diretta tra outcome e i payoff in questo modo</p>
+<figure class="img-fluid">
+    <img src="https://vectr.com/lucapanofsky/azIFvyUUi.svg?width=500&amp;height=400&amp;select=azIFvyUUipage0" width="50%"/> 
+</figure>
+
+<p>Grazie a questa rappresentazione è molto semplice riflettere strategicamente sul gioco. In particolare le preferenze che abbiamo descritto suggeriscono una situazione in cui possiamo decidere se essere, in un certo senso, cooperativi o meno. Per convincerci di ciò proviamo a discutere i vari possibili outcome del gioco. Esiste un unico outcome, l&rsquo;evento <code>(A,A)</code>, in cui entrambi i giocatori ottengono un payoff positivo e chiamiamo questo outcome del gioco <em>cooperativo</em>. In tutti gli altri casi, almeno un giocatore ottiene un payoff negativo. In particolare abbiamo un outcome, l&rsquo;evento <code>(B,B)</code>, in cui entrambi i giocatori ottengono un payoff negativo e altri 2 outcome in cui il giocatore non collaborativo ottiene un payoff positivo a scapito del giocatore collaborativo che ottiene un payoff negativo, gli eventi <code>(A,B)</code> e <code>(B,A)</code>.</p>
+<p>Il gioco evidenzia un dilemma cooperativo noto come <em>dilemma del prigionerio</em> che viene spesso raccontato attraverso una storia di questo tipo:</p>
+<p>Due criminali vengono accusati di aver commesso un reato e vengono arrestati. Gli investigatori li chiudono in due celle diverse, impedendo loro di comunicare. Ad ognuno di loro vengono date due scelte: collaborare, oppure non collaborare. Viene inoltre spiegato loro che:</p>
+<ul>
+<li>se solo uno dei due collabora accusando l&rsquo;altro, chi ha collaborato evita la pena; l&rsquo;altro viene però condannato a 2 anni di carcere;</li>
+<li>se entrambi accusano l&rsquo;altro, vengono entrambi condannati a 1 anno;</li>
+<li>se nessuno dei due collabora, entrambi vengono condannati a 6 mesi di carcere, perché comunque già colpevoli di porto abusivo di armi.</li>
+</ul>
+<p>Un prigioniero preferisce sempre evitare il carcere e preferisce meno anni di carcere a più anni di carcere. Per rappresentare queste preferenze attraverso i payoff possiamo attribuire ad ogni outcome una coppia di numeri correlati negativamente con gli anni di carcere.</p>
+<figure class="img-fluid">
+    <img src="https://vectr.com/lucapanofsky/i1MNbCiswO.svg?width=527&amp;height=400&amp;select=i1MNbCiswOpage0" width="50%"/> 
+</figure>
+
+<p>Il dilemma del prigioniero non ha una rappresentazione unica dei payoff, al contrario tutti i giochi in cui i payoff riflettono le preferenze che abbiamo descritto sono un dilemma del prigioniero.</p>
+<figure class="img-fluid">
+    <img src="https://vectr.com/lucapanofsky/cNFBKDAT9.svg?width=940&amp;height=455&amp;select=cNFBKDAT9page0" width="100%"/> 
+</figure>
+
+<p>Il gioco a sinistra è un dilemma del prigionerio mentre il gioco a destra non lo è e descrive una diversa interazione strategica.
+Prima di leggere il prossimo post provate a riflettere su questi giochi cercando di formulare una soluzione, cioè una argomentazione in favore di un particolare svolgimento del gioco, in altre parole il vostro concetto di soluzione.</p>
+
+  </section>
+</article>
+
+  </div><footer>
+  <br>
+  <div class="text-center">
+    <small class="text-muted">Copyright 2021 Luca Panofsky.</small>
+  </div>
+
+</footer>
+</body>
+
+</html>
